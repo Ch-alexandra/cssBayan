@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    font-family: "Didact Gothic";
+}
+
+h1 {
+    margin: 0;
+}
+
+#header {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    background-color: #C1D3FE;
+}
+
+body {
+    color: #161F3B;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E2EAFC;
+}
+
+main {
+    margin-top: 2em;
+    width: 90%;
+}
+
+article {
+    background-color: #B6CCFE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #4059AD;
+}
+
+.meme-header:last-child {
+    margin-left: auto;
+}
+
+.meme-title {
+    width: 100%;
+    margin-left: 2rem;
+}
+
+input[type="checkbox"] {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0 1em 0 auto;
+    width: 2em;
+    height: 2em;
+    background-size: 1em;
+    background-image: url("./img/plus-solid.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+input[type="checkbox"]:checked {
+    transform: rotate(45deg);
+}
+
+label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.meme-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.meme-image {
+    transition: 0.3s ease;
+    width: 0;
+}
+
+article>label:has(input[type="checkbox"]:checked)>.meme-image {
+    width: 15em;
+    padding-bottom: 1em;
+}
+
+@media(hover: hover) {
+    main:not(:hover)>article>label>.meme-header>input {
+        display: none;
+    }
+
+    main:not(:hover)>article:not(:hover)>label:not(:has(input[type="checkbox"]:checked)) {
+        color: #5B75C2;
+    }
+
+    article:hover>label>.meme-image {
+        width: 15em;
+        padding-bottom: 1em;
+    }
+}
+
+@media(max-width: 800px) {
+    * {
+        font-size: 1.15em;
+    }
+    #header {
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    .meme-image {
+        max-width: 100%;
+    }
+
+    input[type="checkbox"] {
+        background-size: 0.8em;
+        margin-right: 0em;
+    }
+}
+
+@media(max-width: 400px) {
+    * {
+        font-size: 1.05em;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    article>label:has(input[type="checkbox"]:checked)>.meme-image {
+        width: 100%;
+        padding-bottom: 1em;
+    }
+
+    input {
+        background-size: 0.7em;
+    }
+}
